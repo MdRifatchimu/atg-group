@@ -544,6 +544,7 @@ function section() {
                     />
                   </li>
                   <li>
+                    {/* changed  */}
                     <input type="text" name="" placeholder="Email" />
                   </li>
                   <li>

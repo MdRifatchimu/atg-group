@@ -31,6 +31,7 @@ function nav() {
             </div>
           </div>
         </li>
+        {/* changed  */}
         <div className="fix-image">
           <ul>
             <li>
