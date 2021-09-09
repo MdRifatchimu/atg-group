@@ -1,0 +1,221 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-grey-dark, 0.8);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-size: 16px;
+
+    .authentication {
+        position: relative;
+        width: 95rem;
+        border-radius: 5px;
+        background-color: $color-white;
+        transition: all .3s ease-in;
+
+        .icon-cancel {
+            position: absolute;
+            top: -5rem;
+            right: -2rem;
+            cursor: pointer;
+        }
+
+        &__account {
+            margin: 4rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__notice {
+            color: $color-green;
+            font-size: inherit;
+            text-align: center;
+            background-color: rgba($color-green, 0.1);
+            padding: 1.5rem 0;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-bottom: 3rem;
+        }
+
+        .full-name {
+            display: flex;
+
+            input:nth-child(1) {
+                border-right: 1px solid #bcbcbc;
+            }
+        }
+
+        .input {
+            width: 50%;
+            padding: 0 5rem;
+
+            &-container {
+                border-radius: 3px;
+                border: 1px solid #bcbcbc;
+                border-bottom: none;
+
+                input {
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid #bcbcbc;
+                    background-color: $color-grey-extra-light;
+                    padding: 1.5rem;
+                    font-size: inherit;
+                    width: 100%;
+                }
+
+                .icon-view {
+                    position: absolute;
+                    width: 2rem;
+                    right: 1rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .forget-password {
+                display: block;
+                margin-top: 3rem;
+                font-size: 15px;
+                color: $color-grey-medium-dark;
+                font-weight: 700;
+                text-align: center;
+                text-decoration: none;
+                transition: all .2s ease;
+
+                &:hover {
+                    color: $color-blue-dark;
+                    text-decoration: underline;
+                    text-underline-offset: 4px;
+                }
+            }
+
+            .cta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    display: none;
+                    color: $color-grey-medium-dark;
+                }
+            }
+        }
+
+        .switch {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 5rem;
+
+            .p1 {
+                font-size: 16px;
+                color: $color-grey-dark;
+
+                a {
+                    font-weight: 700;
+                    font-size: inherit;
+                    color: $color-blue-dark;
+                    cursor: pointer;
+        
+                    &:hover {
+                        filter: brightness(.7);
+                    }
+                }
+            }
+
+            .p2 {
+                color: $color-grey-medium;
+                font-size: 12px;
+            }
+        }
+
+        .hide {
+            display: none;
+        }
+
+    }
+
+
+
+}
+
+.hide {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .backdrop .authentication {
+        width: 40rem;
+
+        &__notice {
+            display: none;
+        }
+
+        &__account {
+            flex-direction: column;
+            margin: 1rem 0;
+
+            .switch {
+
+                .p1, img {
+                    display: none;
+                }
+    
+                .p2 {
+                    width: 100%;
+                    text-align: center;
+                    margin: 1.5rem 0;
+                }
+            }
+        }
+
+        .input {
+            padding: 0 2rem;
+            width: 100%;
+
+            &-container {
+                input {
+                    padding: 1rem;
+                }
+            }
+
+            .cta {
+                a {
+                    display: inline-block;
+                }
+            }
+        }
+    } 
+        
+}
+
+@media only screen and (max-width: 500px) {
+    .backdrop {
+        font-size: 14px;
+        align-items: flex-end;
+
+        .authentication {
+            width: 100%;
+            height: 75vh;
+            border-radius: 10px 10px 0 0;
+
+            h1 {
+                font-size: 20px;
+                margin: 1.5rem 0;
+            }
+            .icon-cancel {
+                top: 2rem;
+                right: 2rem;
+            }
+        }
+    } 
+}

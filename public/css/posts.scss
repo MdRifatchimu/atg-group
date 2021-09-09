@@ -1,0 +1,303 @@
+.posts {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 16px;
+
+
+    &__section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__header {
+        display: flex;
+        width: 100%;
+        height: 7rem;
+        margin-bottom: 3rem;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid $color-grey-light;
+        font-size: inherit;
+
+        &--nav {
+            display: flex;
+            margin-right: auto;
+            height: 100%;
+            font-size: inherit;
+
+            &--item {
+                height: 100%;
+                margin-right: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $color-grey-medium;
+                cursor: pointer;
+            }
+
+            &--item:hover,
+            .active {
+                border-bottom: 1px solid $color-grey-dark;
+                color: $color-grey-dark;
+            }
+        }
+    }
+
+    &__header--mobile {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 1rem 0;
+
+        p {
+            font-weight: 700;
+        }
+    }
+
+    &__card {
+        width: 75%;
+        margin: 2rem 0;
+        border-radius: 5px;
+        border: 1px solid #dedede;
+        font-size: inherit;
+
+        &--img {
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        &--content {
+            margin: 0 3rem;
+            position: relative;
+        }
+
+        &--status {
+            font-size: 20px;
+            margin-top: 1.5rem;
+        }
+
+        &--heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h2 {
+                font-size: 25px;
+                margin: 2rem 0;
+            }
+
+            .icon_dotted {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 5px;
+                padding: 1rem;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    background-color: rgba(0,0,0, .2);
+                }
+
+                &:hover + .posts__card--options {
+                    opacity: 1;
+                }
+            }
+
+            &--options {
+                position: absolute;
+                top: 10rem;
+                right: 0;
+                width: 15rem;
+                font-size: inherit;
+                border-radius: 5px;
+                background-color: $color-white;
+                box-shadow: 0 2px 4px rgba(0,0,0,.4);
+                opacity: 0;
+    
+                p {
+                    padding: 1rem 1rem;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: rgba(0,0,0, .1);
+                    }
+                }
+    
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &--text {
+            font-size: 17px;
+            color: $color-grey-medium;
+        }
+
+        &--user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3rem 0;
+            font-size: 16px;
+
+            &-name {
+                font-size: inherit;
+                margin: 0 auto 0 1.5rem;
+            }
+        }
+
+        &--views {
+            color: $color-grey-medium-dark;
+            font-size: inherit;
+            font-weight: 500;
+            margin: 0 1.5rem 0 .5rem;
+        }
+
+        &--location {
+            display: flex;
+            margin-bottom: 2rem;
+
+            &--item {
+                display: flex;
+                margin-right: auto;
+            }
+
+            &--icon {
+                width: 2rem;
+                margin: 0 1rem;
+            }
+
+            &--title {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+
+        .icon_share {
+            width: 4rem;
+            height: 3rem;
+            padding: 0.7rem 1rem;
+            background-color: $color-grey-light;
+            border-radius: 2px;
+        }
+
+        .icon_view {
+            width: 2rem;
+        }
+    }
+}
+
+.create-post {
+    display: none;
+    position: fixed;
+    width: 6rem;
+    height: 6rem;
+    bottom: 3rem;
+    right: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0, .4);
+    border-radius: 100%;
+    background-image: linear-gradient(to left bottom, $color-pink-light, $color-pink-dark);
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+}
+
+@media only screen and (max-width: 1400px) {
+    .posts {
+        width: 90%;
+
+        &__card {
+            width: 85%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .posts__card {
+
+        &--heading h2 {
+            font-size: 20px;
+        }
+
+        &--text {
+            font-size: 15px;
+        }
+
+        &--views {
+            margin: 0 10px 0 5px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .posts {
+        width: 100%;
+        padding: 0 1.5rem;
+
+        &__card {
+            margin: 2rem auto;
+
+            &--status {
+                font-size: 15px;
+            }
+        }
+
+        &__header--nav--item {
+            margin-right: 1.5rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .posts {
+        padding: 0;
+
+        &__header {
+            display: none;
+        }
+
+        &__header--mobile {
+            display: flex;
+        }
+
+        &__card {
+            width: 100%;
+        }
+    }
+
+    .create-post {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .posts__card {
+
+        &--content {
+            margin: 0 1rem;
+        }
+        &--heading h2{
+            font-size: 16px;
+        }
+    
+        &--text, &--user {
+            font-size: 14px;
+        }
+
+
+        &--location {
+
+            &--icon {
+                margin: 0 5px;
+            }
+            &--title {
+                font-size: 12px;
+            }
+        }
+
+    }
+}

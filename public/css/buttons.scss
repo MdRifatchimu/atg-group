@@ -1,0 +1,112 @@
+.btn {
+    display: flex;
+    width: 14rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    transition: all .2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(.9);
+    }
+
+    &--primary {
+        background-color: $color-blue-dark;
+        color: $color-white;
+        margin: 0 1rem;
+    }
+
+    &--secondary {
+        background-color: $color-grey-light;
+        color: $color-grey-dark;
+    }
+
+
+    &--tertiary {
+        font-weight: 700;
+    }
+
+    &--follow {
+        border-radius: 100px;
+        width: auto;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    &--auth {
+        background-color: $color-blue--medium-dark;
+        border-radius: 100px;
+        width: 100%;
+        margin: 3rem 0;
+        justify-content: center;
+        color: $color-white;
+        font-weight: 700;
+        padding: 1.5rem 0;
+    }
+
+    &--facebook,
+    &--google,
+    &--tertiary {
+        background-color: transparent;
+        border: 1px solid #dedede;
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0;
+
+        img {
+            margin-right: 1rem;
+        }
+
+        &:hover {
+            background-color: rgba(0,0,0, .05);
+        }
+    }
+
+    &--outlined {
+        width: auto;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 7px;
+        background-color: transparent;
+        border: 1px solid $color-white;
+        color: $color-white;
+    }
+
+}
+
+.green {
+    color: #02B875;
+}
+
+.red {
+    color: #E56135;
+}
+
+@media only screen and (max-width: 800px) {
+    .btn__primary,
+    .btn__secondary {
+        margin: 0 5px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .btn--auth {
+        width: 15rem;
+        display: inline-flex;
+        font-size: 13px;
+        margin: 1.5rem 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .btn--facebook,
+    .btn--google {
+        font-size: 14px;
+    }
+}

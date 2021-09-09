@@ -1,0 +1,108 @@
+.groups {
+    width: 35rem;
+
+    &__search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #dedede;
+        padding: 1.5rem 0;
+
+        .icon-location {
+            width: 2rem;
+        }
+
+        .icon-cancel {
+            position: absolute;
+            right: 1rem;
+        }
+    }
+
+    &__input {
+        width: 30rem;
+        margin-left: 1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 16px;
+    }
+
+
+    &__suggestion {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        color: $color-grey-medium;
+        margin: 4rem 0;
+
+        p {
+            margin-left: 1rem;
+        }
+    }
+
+    &__recommended {
+        margin: 10rem 0;
+
+        &--header {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            text-transform: uppercase;
+
+            img {
+                width: 2.5rem;
+                margin-right: 1rem;
+            }
+        }
+
+        &--list {
+            margin-bottom: 7rem;
+        }
+
+        &--item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                margin-left: 1rem;
+                margin-right: auto;
+            }
+        }
+
+        .see-more {
+            font-size: 14px;
+            color: $color-blue-dark;
+            float: right;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover {
+                transform: scaleX(1.05);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .groups {
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .groups {
+        width: 25rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .groups {
+        display: none;
+    }
+}

@@ -2,32 +2,316 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-
-
-
-  <title>Groups</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="Assets/png/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>ATG WORLD</title>
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <main>
+    <figure class="create-post">
+      <img src="Assets/svg/i_pencil.svg" alt="icon pencil">
+    </figure>
 
-  <script src="js/script.js" type="text/javascript" defer></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <div class="backdrop hide">
+      <div class="authentication">
+        <picture>
+          <source srcset="Assets/svg/i_cancel_circle_black.svg" media="(max-width: 500px)">
+          <img class="icon-cancel" src="Assets/svg/i_cancel_circle.svg" alt="icon cancel circle">
+        </picture>
+        <p class="authentication__notice">Let's learn, share & inspire each other with our passion for computer
+          engineering. Sign up now 🤘🏼
+        </p>
+        <div class="authentication__account" id="create-account">
+          <div class="input">
+            <h1>Create Account</h1>
+            <div class="input-container">
+              <div class="full-name">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+              </div>
+              <input type="email" placeholder="Email">
+              <label style="position: relative;">
+                <img class="icon-view" src="Assets/svg/i_view.svg" alt="icon view">
+                <input type="password" placeholder="Password">
+              </label>
+              <input type="password" placeholder="Confirm Password">
+            </div>
+            <div class="cta">
+              <button class="btn btn--auth">Create Account</button>
+              <a class="sign-in-mobile">or, Sign In</a>
+            </div>
+            <button class="btn btn--facebook">
+              <img src="Assets/png/i_facebook.png" alt="facebook icon">
+              Sign up with Facebook
+            </button>
+            <button class="btn btn--google">
+              <img src="Assets/png/i_google.png" alt="google icon">
+              Sign up with Google
+            </button>
+          </div>
+          <div class="switch">
+            <p class="p1">Already have an account? <a class="sign-in">Sign In</a></p>
+            <img src="Assets/png/sign_in_image.png" alt="sign in image">
+            <p class="p2">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+          </div>
+        </div>
 
+        <div class="authentication__account hide" id="sign-in">
+          <div class="input">
+            <h1>Welcome back!</h1>
+            <div class="input-container">
+              <input type="email" placeholder="Email">
+              <label style="position: relative;">
+                <img class="icon-view" src="Assets/svg/i_view.svg" alt="icon view">
+                <input type="password" placeholder="Password">
+              </label>
+            </div>
+            <div class="cta">
+              <button class="btn btn--auth">Sign In</button>
+              <a class="sign-up-mobile">or, Create new</a>
+            </div>
+            <button class="btn btn--facebook">
+              <img src="Assets/png/i_facebook.png" alt="facebook icon">
+              Sign in with Facebook
+            </button>
+            <button class="btn btn--google">
+              <img src="Assets/png/i_google.png" alt="google icon">
+              Sign in with Google
+            </button>
+            <a href="" class="forget-password">Forget Password?</a>
+          </div>
+          <div class="switch">
+            <p class="p1">Don’t have an account yet? <a class="sign-up">Create new for free!</a></p>
+            <img src="Assets/png/sign_in_image.png" alt="sign in image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <img class="header__logo" src="Assets/svg/i_logo.svg" alt="logo">
+      <label class="header__search-bar">
+        <img class="header__icon-search" src="Assets/svg/i_search.svg" alt="search icon">
+        <input class="header__input" type="text" placeholder="Search for your favorite groups in ATG">
+      </label>
+      <div class="header__sign-up">
+        <p>Create account. <a class="authorization">It's free</a></p>
+        <img class="header__sign-up--logo" src='Assets/svg/i_arrow_bottom.svg' alt="icon arrow bottom" />
+      </div>
+    </header>
+    <div class="home">
+      <div class="home__mobile">
+        <img src="Assets/svg/i_previous.svg" alt="icon previos">
+        <button class="btn btn--outlined authorization-mobile">Join ATG</button>
+      </div>
+      <div class="home__details">
+        <h1>Computer Engineering</h1>
+        <p>142,765 Computer Engineers follow this</p>
+      </div>
+    </div>
+    <section class="posts">
+      <header class="posts__header">
+        <nav class="posts__header--nav">
+          <a class="posts__header--nav--item active">All Posts (32)</a>
+          <a class="posts__header--nav--item">Article</a>
+          <a class="posts__header--nav--item">Event</a>
+          <a class="posts__header--nav--item">Education</a>
+          <a class="posts__header--nav--item">Job</a>
+        </nav>
+        <button class="btn btn--secondary">
+          Write a Post&nbsp;
+          <img src="Assets/svg/i_arrow_bottom.svg" />
+        </button>
+        <button class="btn btn--primary">
+          <img src="Assets/svg/i_add_friends.svg" />
+          &nbsp;Join Group
+        </button>
+      </header>
+      <header class="posts__header--mobile">
+        <p>Posts (138)</p>
+        <button class="btn btn--secondary">
+          Filter:All
+          <img src="Assets/svg/i_arrow_bottom.svg" alt="icon arrow">
+        </button>
+      </header>
+      <div class="posts__section">
+        <div class="posts__list">
+          <figure class="posts__card">
+            <img class="posts__card--img" src="Assets/png/post_1.png" alt="post img">
+            <div class="posts__card--content">
+              <p class="posts__card--status">✍️ Article</p>
+              <div class="posts__card--heading">
+                <h2>
+                  What if famous brands had regular fonts? Meet RegulaBrands!
+                </h2>
+                <img class="icon_dotted" src="Assets/svg/i_dotted.svg" alt="dotted icon" />
+                <div class="posts__card--heading--options">
+                  <p>Edit</p>
+                  <p>Report</p>
+                  <p>Option 3</p>
+                </div>
+              </div>
+              <p class="posts__card--text">
+                I’ve worked in UX for the better part of a decade. From now on, I plan to
+                rei…
+              </p>
+              <div class="posts__card--user">
+                <img class="icon_user" src="Assets/png/user_1.png" alt="user 1">
+                <h3 class="posts__card--user-name">Sarthak Karma</h3>
+                <img class="icon_view" src="Assets/svg/i_view.svg" alt="icon view" />
+                <p class="posts__card--views">1.4k views</p>
+                <img src="Assets/svg/i_share.svg" alt="icon share" class="icon_share">
+              </div>
+            </div>
+          </figure>
+          <figure class="posts__card">
+            <img class="posts__card--img" src="Assets/png/post_2.png" alt="post img">
+            <div class="posts__card--content">
+              <p class="posts__card--status">🔬️ Education</p>
+              <div class="posts__card--heading">
+                <h2>
+                  Tax Benefits for Investment under National Pension Scheme launched by Government
+                </h2>
+                <img class="icon_dotted" src="Assets/svg/i_dotted.svg" alt="dotted icon" />
+                <div class="posts__card--heading--options">
+                  <p>Edit</p>
+                  <p>Report</p>
+                  <p>Option 3</p>
+                </div>
+              </div>
+              <p class="posts__card--text">
+                I’ve worked in UX for the better part of a decade. From now on, I plan to rei…
+              </p>
+              <div class="posts__card--user">
+                <img class="icon_user" src="Assets/png/user_2.png" alt="user 1">
+                <h3 class="posts__card--user-name">Sarah West</h3>
+                <img class="icon_view" src="Assets/svg/i_view.svg" alt="icon view" />
+                <p class="posts__card--views">1.4k views</p>
+                <img src="Assets/svg/i_share.svg" alt="icon share" class="icon_share">
+              </div>
+            </div>
+          </figure>
+          <figure class="posts__card">
+            <img class="posts__card--img" src="Assets/png/post_3.png" alt="post img">
+            <div class="posts__card--content">
+              <p class="posts__card--status">🗓️ Meetup</p>
+              <div class="posts__card--heading">
+                <h2>
+                  Finance & Investment Elite Social Mixer @Lujiazui
+                </h2>
+                <img class="icon_dotted" src="Assets/svg/i_dotted.svg" alt="dotted icon" />
+                <div class="posts__card--heading--options">
+                  <p>Edit</p>
+                  <p>Report</p>
+                  <p>Option 3</p>
+                </div>
+              </div>
+              <div class="posts__card--location">
+                <div class="posts__card--location--item">
+                  <img class="posts__card--location--icon" src="Assets/svg/i_calender.svg" alt="location item">
+                  <p class="posts__card--location--title">Fri, 12 Oct, 2018</p>
+                </div>
+                <div class="posts__card--location--item">
+                  <img class="posts__card--location--icon" src="Assets/svg/i_location.svg" alt="location item">
+                  <p class="posts__card--location--title">Ahmedabad, India</p>
+                </div>
+              </div>
+              <button class="btn btn--tertiary red">Visit website</button>
+              <div class="posts__card--user">
+                <img class="icon_user" src="Assets/png/user_3.png" alt="user 1">
+                <h3 class="posts__card--user-name">Ronal Jones</h3>
+                <img class="icon_view" src="Assets/svg/i_view.svg" alt="icon view" />
+                <p class="posts__card--views">1.4k views</p>
+                <img src="Assets/svg/i_share.svg" alt="icon share" class="icon_share">
+              </div>
+            </div>
+          </figure>
+          <figure class="posts__card">
+            <div class="posts__card--content">
+              <p class="posts__card--status">💼️ Job</p>
+              <div class="posts__card--heading">
+                <h2>
+                  Software Developer
+                </h2>
+                <img class="icon_dotted" src="Assets/svg/i_dotted.svg" alt="dotted icon" />
+                <div class="posts__card--heading--options">
+                  <p>Edit</p>
+                  <p>Report</p>
+                  <p>Option 3</p>
+                </div>
+              </div>
+              <div class="posts__card--location">
+                <div class="posts__card--location--item">
+                  <img class="posts__card--location--icon" src="Assets/svg/i_basket.svg" alt="location item">
+                  <p class="posts__card--location--title">Innovaccer Analytics Private Ltd</p>
+                </div>
+                <div class="posts__card--location--item">
+                  <img class="posts__card--location--icon" src="Assets/svg/i_location.svg" alt="location item">
+                  <p class="posts__card--location--title">Noida, India</p>
+                </div>
+              </div>
+              <button class="btn btn--tertiary green">Apply on Timesjobs</button>
+              <div class="posts__card--user">
+                <img class="icon_user" src="Assets/png/user_4.png" alt="user 1">
+                <h3 class="posts__card--user-name">Joseph Gray</h3>
+                <img class="icon_view" src="Assets/svg/i_view.svg" alt="icon view" />
+                <p class="posts__card--views">1.4k views</p>
+                <img src="Assets/svg/i_share.svg" alt="icon share" class="icon_share">
+              </div>
+            </div>
+          </figure>
+        </div>
+        <div class="groups">
+          <div class="groups__search-bar">
+            <img class="icon-location" src="Assets/svg/i_location.svg" alt="icon location">
+            <input class="groups__input" type="text" placeholder="Enter your location">
+            <img class="icon-cancel" src="Assets/svg/i_cancel.svg" alt="icon cancel">
+          </div>
+          <div class="groups__suggestion">
+            <img class="icon-error" src="Assets/svg/i_error_circle.svg" alt="icon error">
+            <p>
+              Your location will help us serve better and extend a personalised experience.
+            </p>
+          </div>
+          <div class="groups__recommended">
+            <header class="groups__recommended--header">
+              <img src="Assets/svg/i_like.svg" alt="icon like">
+              <h3>recommended groups</h3>
+            </header>
+            <div class="groups__recommended--list">
+              <div class="groups__recommended--item">
+                <img src="Assets/png/group_1.png" alt="group 1">
+                <p>Leisure</p>
+                <button class="btn btn--follow">Follow</button>
+              </div>
+              <div class="groups__recommended--item">
+                <img src="Assets/png/group_2.png" alt="group 1">
+                <p>Activism</p>
+                <button class="btn btn--follow">Follow</button>
+              </div>
+              <div class="groups__recommended--item">
+                <img src="Assets/png/group_3.png" alt="group 1">
+                <p>MBA</p>
+                <button class="btn btn--follow">Follow</button>
+              </div>
+              <div class="groups__recommended--item">
+                <img src="Assets/png/group_4.png" alt="group 1">
+                <p>Philosophy</p>
+                <button class="btn btn--follow">Follow</button>
+              </div>
+            </div>
+            <p class="see-more">See More...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
